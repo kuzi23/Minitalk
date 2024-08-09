@@ -6,7 +6,7 @@
 /*   By: mkwizera <mkwizera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 21:57:35 by mkwizera          #+#    #+#             */
-/*   Updated: 2024/08/09 22:10:59 by mkwizera         ###   ########.fr       */
+/*   Updated: 2024/08/09 23:57:39 by mkwizera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int	ft_atoi(char *str)
 		nb = (nb * 10) + str[i] - 48;
 		i++;
 	}
+	return (nb);
 }
 
 void	send_bits(int pid, char c)

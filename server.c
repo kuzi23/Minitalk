@@ -6,7 +6,7 @@
 /*   By: mkwizera <mkwizera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 21:56:53 by mkwizera          #+#    #+#             */
-/*   Updated: 2024/08/09 22:22:23 by mkwizera         ###   ########.fr       */
+/*   Updated: 2024/08/09 23:46:20 by mkwizera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,26 @@
 
 void	ft_putnbr(long nbr)
 {
-	char temp;
+	char	temp;
 
-	if(nbr / 10 > 0)
-	ft_putnbr(nbr / 10);
+	if (nbr / 10 > 0)
+		ft_putnbr(nbr / 10);
 	temp = nbr % 10;
 	write(1, &temp, 1);
 }
 
 void	sig_handle(int signal)
 {
-	static int i;
-	static char n;
-	int nb;
+	static int	i;
+	static char	n;
+	int			nb;
 
-	if(signal == SIGUSR1)
+	if (signal == SIGUSR1)
 		nb = 0;
 	else
-        	nb = 1;
+	{
+		nb = 1;
+	}
 	n = (n << 1) + nb;
 	i++;
 	if (i == 8)
@@ -46,7 +48,8 @@ void	sig_handle(int signal)
 
 int	main(void)
 {
-	struct	sigaction sigact
+	struct sigaction	sigact;
+
 	sigact.sa_handler = &sig_handle;
 	sigact.sa_flags = SA_RESTART;
 	sigaction(SIGUSR1, &sigact, NULL);
@@ -56,7 +59,7 @@ int	main(void)
 	write(1, "\n", 1);
 	while (1)
 	{
-		usleep(1)
+		usleep(1);
 	}
 	return (0);
 }
