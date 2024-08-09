@@ -6,7 +6,7 @@
 /*   By: mkwizera <mkwizera@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/09 21:56:53 by mkwizera          #+#    #+#             */
-/*   Updated: 2024/08/09 23:46:20 by mkwizera         ###   ########.fr       */
+/*   Updated: 2024/08/10 00:26:41 by mkwizera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_putnbr(long nbr)
 
 	if (nbr / 10 > 0)
 		ft_putnbr(nbr / 10);
-	temp = nbr % 10;
+	temp = nbr % 10 + '0';
 	write(1, &temp, 1);
 }
 
